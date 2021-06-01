@@ -23,6 +23,11 @@ public class PlayerStats : MonoBehaviour
         if (lifes <= 0)
         {
             lose = true;
+
+            if(GameManager.Instance.highScore < score)
+            {
+                GameManager.Instance.highScore = score;
+            }
         }
     }
 
@@ -32,6 +37,13 @@ public class PlayerStats : MonoBehaviour
 
         bricksLeft--;
         if (bricksLeft <= 0)
+        {
             win = true;
+            
+            if (GameManager.Instance.highScore < score)
+            {
+                GameManager.Instance.highScore = score;
+            }
+        }
     }
 }
