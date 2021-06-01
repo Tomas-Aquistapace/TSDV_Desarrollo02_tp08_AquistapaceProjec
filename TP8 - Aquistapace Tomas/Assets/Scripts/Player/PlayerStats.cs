@@ -24,10 +24,13 @@ public class PlayerStats : MonoBehaviour
         {
             lose = true;
 
-            if(GameManager.Instance.highScore < score)
+            if(GameManager.instance.highScore < score)
             {
-                GameManager.Instance.highScore = score;
+                GameManager.instance.highScore = score;
             }
+            GameManager.instance.score = score;
+            GameManager.instance.finalState = false;
+            this.transform.GetComponent<PlayerUI>().GoToScene();
         }
     }
 
@@ -40,10 +43,13 @@ public class PlayerStats : MonoBehaviour
         {
             win = true;
             
-            if (GameManager.Instance.highScore < score)
+            if (GameManager.instance.highScore < score)
             {
-                GameManager.Instance.highScore = score;
+                GameManager.instance.highScore = score;
             }
+            GameManager.instance.score = score;
+            GameManager.instance.finalState = true;
+            this.transform.GetComponent<PlayerUI>().GoToScene();
         }
     }
 }

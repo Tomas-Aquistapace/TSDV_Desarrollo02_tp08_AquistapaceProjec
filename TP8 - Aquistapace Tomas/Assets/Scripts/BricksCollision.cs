@@ -8,7 +8,7 @@ public class BricksCollision : MonoBehaviour
 
     private void Start()
     {
-        player = GameManager.Instance.player;
+        player = GameManager.instance.player;
     }
 
     void OnCollisionEnter(Collision coll)

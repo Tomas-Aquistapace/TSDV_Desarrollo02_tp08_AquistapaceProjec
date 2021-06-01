@@ -2,25 +2,15 @@
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
+    public static GameManager instance;
 
-    public static GameManager Instance
+    private void Awake()
     {
-        get
-        {
-            if(instance == null)
-            {
-                instance = FindObjectOfType<GameManager>();
-                if(instance == null)
-                {
-                    instance = new GameObject().AddComponent<GameManager>();
-                }
-            }
-
-            return instance;
-        }
+        instance = this;
     }
 
     public Transform player;
     public int highScore;
+    public int score;
+    public bool finalState;
 }

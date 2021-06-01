@@ -6,14 +6,13 @@ public class LoseLife : MonoBehaviour
 
     private void Start()
     {
-        player = GameManager.Instance.player;
+        player = GameManager.instance.player;
     }
 
     void OnCollisionEnter(Collision coll)
     {
         if(coll.transform.tag == "Ball")
         {
-
             player.GetComponent<PlayerStats>().Die();
             player.GetComponent<PlayerMovement>().RestoreBallPosition();
         }

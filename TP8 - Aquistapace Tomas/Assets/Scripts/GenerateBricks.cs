@@ -17,7 +17,7 @@ public class GenerateBricks : MonoBehaviour
         Generate();
 
         totalBricks = width * height;
-        GameManager.Instance.player.GetComponent<PlayerStats>().bricksLeft = totalBricks;
+        GameManager.instance.player.GetComponent<PlayerStats>().bricksLeft = totalBricks;
     }
 
     void Generate() 
