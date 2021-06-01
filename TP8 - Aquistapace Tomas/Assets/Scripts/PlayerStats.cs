@@ -3,11 +3,17 @@
 public class PlayerStats : MonoBehaviour
 {
     public int lifes = 3;
+    public int score = 0;
+    public int bricksLeft;
     public bool lose;
+    public bool win;
 
     void Start()
     {
+        score = 0;
+
         lose = false;
+        win = false;
     }
 
     public void Die()
@@ -18,5 +24,14 @@ public class PlayerStats : MonoBehaviour
         {
             lose = true;
         }
+    }
+
+    public void EarnPoints(int amount)
+    {
+        score += amount;
+
+        bricksLeft--;
+        if (bricksLeft <= 0)
+            win = true;
     }
 }

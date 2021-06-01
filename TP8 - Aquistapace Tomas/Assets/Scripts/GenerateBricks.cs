@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GenerateBricks : MonoBehaviour
 {
-    public float width = 10;
-    public float height = 10;
+    public int width = 10;
+    public int height = 10;
+    public int totalBricks = 0;
 
     public GameObject brick;
 
@@ -14,6 +15,9 @@ public class GenerateBricks : MonoBehaviour
     void Start()
     {
         Generate();
+
+        totalBricks = width * height;
+        GameManager.Instance.player.GetComponent<PlayerStats>().bricksLeft = totalBricks;
     }
 
     void Generate() 
