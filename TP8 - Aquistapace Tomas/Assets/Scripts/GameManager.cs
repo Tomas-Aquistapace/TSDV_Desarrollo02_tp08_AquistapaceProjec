@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
                 highScore = score;
             }
             finalState = true;
-            this.transform.GetComponent<PlayerUI>().GoToScene();
+            this.transform.GetComponent<MoveScene>().GoToScene();
         }
     }
 

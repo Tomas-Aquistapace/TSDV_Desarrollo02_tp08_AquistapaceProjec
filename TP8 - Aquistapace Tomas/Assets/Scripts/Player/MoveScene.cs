@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerUI : MonoBehaviour
+public class MoveScene : MonoBehaviour
 {
     public string scene;
 

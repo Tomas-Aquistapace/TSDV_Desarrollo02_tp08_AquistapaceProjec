@@ -17,7 +17,7 @@ public class PlayerStats : MonoBehaviour
 
         if (lifes <= 0)
         {
-            this.transform.GetComponent<PlayerUI>().GoToScene();
+            this.transform.GetComponent<MoveScene>().GoToScene();
         }
     }
 }
