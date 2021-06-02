@@ -8,14 +8,14 @@ public class BricksCollision : MonoBehaviour
 
     private void Start()
     {
-        player = GameManager.instance.player;
+        //player = GameManager.Get().player;
     }
 
     void OnCollisionEnter(Collision coll)
     {
         if(coll.transform.tag == "Ball")
         {
-            player.GetComponent<PlayerStats>().EarnPoints(value);
+            GameManager.Get().CheckWin(value);
 
             Destroy(this.gameObject);
         }

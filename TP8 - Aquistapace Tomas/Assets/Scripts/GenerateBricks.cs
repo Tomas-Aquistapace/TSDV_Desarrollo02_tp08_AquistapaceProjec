@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GenerateBricks : MonoBehaviour
 {
@@ -17,7 +15,9 @@ public class GenerateBricks : MonoBehaviour
         Generate();
 
         totalBricks = width * height;
-        GameManager.instance.player.GetComponent<PlayerStats>().bricksLeft = totalBricks;
+        //GameManager.Get().player.GetComponent<PlayerStats>().bricksLeft = totalBricks;
+
+        GameManager.Get().totalBricks = totalBricks;
     }
 
     void Generate() 
@@ -36,7 +36,6 @@ public class GenerateBricks : MonoBehaviour
                 go.transform.position = new Vector3(x + 0.5f, y - cont, 0);
 
                 Instantiate(go, parent.transform);
-
             }
             cont += 0.5f;
         }

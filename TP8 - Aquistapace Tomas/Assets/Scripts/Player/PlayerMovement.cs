@@ -25,11 +25,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!playerStats.lose && !playerStats.win)
-        {
-            Movement();
-            ThrowTheBall();
-        }
+        Movement();
+        ThrowTheBall();
     }
 
     void ThrowTheBall()

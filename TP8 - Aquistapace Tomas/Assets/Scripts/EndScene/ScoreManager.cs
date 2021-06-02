@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        if (!GameManager.instance.finalState)
+        if (!GameManager.Get().finalState)
         {
             losePoster.SetActive(true);
             winPoster.SetActive(false);
@@ -22,8 +22,8 @@ public class ScoreManager : MonoBehaviour
             losePoster.SetActive(false);
         }
 
-        highscore.text = GameManager.instance.highScore.ToString();
-        gameScore.text = GameManager.instance.score.ToString();
+        highscore.text = GameManager.Get().highScore.ToString();
+        gameScore.text = GameManager.Get().score.ToString();
     }
 
 }

@@ -2,12 +2,7 @@
 
 public class LoseLife : MonoBehaviour
 {
-    private Transform player;
-
-    private void Start()
-    {
-        player = GameManager.instance.player;
-    }
+    public Transform player;
 
     void OnCollisionEnter(Collision coll)
     {
