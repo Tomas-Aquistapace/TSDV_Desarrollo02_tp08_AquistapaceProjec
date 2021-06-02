@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
                 highScore = score;
             }
             finalState = true;
-            this.transform.GetComponent<MoveScene>().GoToScene();
+            SceneManager.LoadScene("EndScreen");
         }
     }
 
