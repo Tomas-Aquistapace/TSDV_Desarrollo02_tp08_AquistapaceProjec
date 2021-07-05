@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Movement();
         ThrowTheBall();
+        InputExit();
     }
 
     void ThrowTheBall()
@@ -54,6 +56,14 @@ public class PlayerMovement : MonoBehaviour
         if (stopBall)
         {
             ball.transform.position = new Vector3(this.transform.position.x, ball.transform.position.y, 0);
+        }
+    }
+
+    void InputExit()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
